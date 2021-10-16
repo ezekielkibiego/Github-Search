@@ -3,7 +3,6 @@ export class User {
         public name: string,
         public login: string,
         public avatar_url: string,
-        // public blog: string,
         public html_url: string,
         public location: string,
         public bio: string,
