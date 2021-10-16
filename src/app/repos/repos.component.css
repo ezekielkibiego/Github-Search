@@ -1,0 +1,9 @@
+.repo{
+    background-color: rgb(221, 130, 96);
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+::placeholder{
+    color: rgb(221, 130, 96);
+}
