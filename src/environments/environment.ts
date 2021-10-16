@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  apiKey: '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',
+  apiUrl: 'https://api.github.com/users',
 };
 // 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    personal access token
 
