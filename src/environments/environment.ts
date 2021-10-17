@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  BASEURL: 'https://api.github.com'
 
 };
 // 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    personal access token

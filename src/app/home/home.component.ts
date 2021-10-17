@@ -8,14 +8,25 @@ import { DataService } from '../data-service/data.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  username = 'ezekielkibiego'
+  repository:any[] = []
 
-  constructor() {
-    
+  constructor(private dataService:DataService) {
+
   }
 
 
-  ngOnInit(): void {
 
+
+  ngOnInit(): void {
+    this.getUserInfo ()
+
+  }
+  getUserInfo (){
+    return this.dataService.getUser (this.username).subscribe((response:any[])=>{
+      console.log(response)
+      this.repository=response
+    })
   }
 
 }
