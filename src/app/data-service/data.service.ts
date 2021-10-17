@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -9,28 +8,84 @@ import { Repos } from '../users/repos';
   providedIn: 'root'
 })
 export class DataService {
-  userGottenDetails: any;
-  userRepos: any;
-  getUserRequest(githubUsername: string) {
-    throw new Error('Method not implemented.');
-  }
-  Users: User[] = [];;
-  Repos: Repos[] = [];
+  userData: User;
+  repoData: Repos;
 
-  private BaseUrl = environment.BASEURL
-  
-
-  constructor(private httpClient: HttpClient) { 
+  constructor(private http: HttpClient){
+    this.userData = new User(
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      0,
+      0,
+      0,
+      new Date(),
+      ''
+    ),
     
+    this.repoData = new Repos(
+      '',
+      '',
+      '',
+      new Date()
+    )
   }
-  
 
-  getUser (username:string){
-   const endpoint = 'users'
-    return this.httpClient.get<any[]>(`${this.BaseUrl}/${endpoint}/${username}/repos`, {
+ getUserDataRequest(getUserInfo){
+   interface ApiResponse{
+     name: string,
+     login: string,
+     avatar_url: string,
+     html_url: string,
+     location: string,
+     bio: string,
+     twitter_username: string,
+     public_repos: number,
+     followers: number,
+     following: number,
+     created_at: Date,
+     company?: string,
+   }
+   let userPromise = new Promise<void>((resolve, reject)=>{
+     this.http.get<ApiResponse>(environment.apiUrl + '/' + getUserInfo + '??access_token=' + environment.apiKey).toPromise().then((Response)=>{
 
-    }
-    ).toPromise()
+      this.userData = Response;
+      resolve()
+     },
+     (error)=>{
+       reject(error);
+       console.log(error);
+     })
+     
+   })
+   return userPromise
+ }
+
+ getReposDataRequest(getUserInfo){
+  interface ApiResponse{
+    name: string,
+    html_url: string,
+    description: string,
+    created_at: Date
   }
+  let reposPromise = new Promise<void>((resolve, reject)=>{
+    this.http.get<ApiResponse>(environment.apiUrl + '/' + getUserInfo + '/repos?sort=created&direction=desc??access_token=' + environment.apiKey).toPromise().then((Response)=>{
+
+     this.repoData = Response;
+     resolve()
+    },
+    (error)=>{
+      reject(error);
+      console.log(error);
+    })
+    
+  })
+  return reposPromise
+}
+
 }
 

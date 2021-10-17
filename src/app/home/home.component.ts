@@ -1,6 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data-service/data.service'; 
+import { User } from '../users/user';
 
 @Component({
   selector: 'app-home',
@@ -8,31 +8,28 @@ import { DataService } from '../data-service/data.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  username = 'ezekielkibiego'
-  repository:any[] = []
+  username: User;
+  repository: any;
 
-  constructor(private dataService:DataService) {
+  constructor(private requestUser:DataService) {
 
+    getUser(githubUsername){
+      this.requestUser.getUserDataRequest(githubUsername).then(
+        (Response)=>{
+          this.username=this.requestUser.userData
+        }
+      )
+    }
   }
 
 
 
 
   ngOnInit(): void {
-    this.getUserInfo ()
+    
 
   }
-  getUserInfo (){
-    return this.dataService.getUser (this.username).then((response:any[])=>{
-      console.log(response)
-      this.repository=response
-    }).catch((error: any)=>{
-      console.log(error)
-    }).finally(() =>{
-      console.log('error occurred')
-    })
-  }
-
+  
 }
  
 
