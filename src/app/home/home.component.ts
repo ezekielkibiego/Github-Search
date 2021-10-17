@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data-service/data.service'; 
 
@@ -9,6 +10,7 @@ import { DataService } from '../data-service/data.service';
 export class HomeComponent implements OnInit {
   username = 'ezekielkibiego'
   repository:any[] = []
+
   constructor(private dataService:DataService) {
 
   }
@@ -24,7 +26,7 @@ export class HomeComponent implements OnInit {
     return this.dataService.getUser (this.username).then((response:any[])=>{
       console.log(response)
       this.repository=response
-    }).catch((error)=>{
+    }).catch((error: any)=>{
       console.log(error)
     }).finally(() =>{
       console.log('error occurred')
