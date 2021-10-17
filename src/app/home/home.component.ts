@@ -11,17 +11,31 @@ export class HomeComponent implements OnInit {
   username: User;
   repository: any;
 
-  constructor(private requestUser:DataService) {
+  constructor(private requestUser:DataService) {}
 
     getUser(githubUsername){
       this.requestUser.getUserDataRequest(githubUsername).then(
         (Response)=>{
-          this.username=this.requestUser.userData
+          this.username=this.requestUser.userData;
+          console.log(this.username)
+        },
+        (error)=>{
+          console.log(error);
         }
       )
     }
-  }
+  
 
+  getRepos(githubUsername){
+    this.requestUser.getReposDataRequest(githubUsername).then(
+      (Response)=>{
+        this.repository=this.requestUser.repoData;
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
+  }
 
 
 
