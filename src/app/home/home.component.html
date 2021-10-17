@@ -1,7 +1,10 @@
-<div class="container-fluid">
+<div class="container-fluid card">
     <ul *ngFor= "let repo of repository">
         <li>
             {{repo.name}}
+            {{repo.description}}
+            {{repo.id}}
+
         </li>
     </ul>
 </div>
