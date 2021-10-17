@@ -1,14 +1,19 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../users/user';
-import { Repos } from '../users/repos';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  userGottenDetails!: User;
-  userRepositories!: Repos;
+  
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { 
+  }
+
+  getUser ():Observable<any[]>{
+    return this.httpClient.get<any[]>(`https://api.github.com/users/ezekielkibiego/repos`)
+  }
 }
+
