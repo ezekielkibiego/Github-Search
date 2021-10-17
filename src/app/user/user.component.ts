@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { DataService } from '../data-service/data.service';
+import { User } from '../users/user';
 
 @Component({
   selector: 'app-user',
@@ -8,7 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('k') searchGithubUserForm: NgForm
+  home: string;
+  userInfo: User;
+
+  showUser = false;
+
+  searchGithubUser(){
+    this.home=this.searchGithubUserForm.value.search;
+    console.log(this.home);
+    
+    this.requestUser.getUserDataRequest(this.home).then(
+      (Response)=>{
+        this.userInfo=this.requestUser.userData;
+        console.log(this.userInfo);
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
+    this.showUser=true;
+  }
+  constructor(private requestUser:DataService) {}
+
+
 
   ngOnInit(): void {
   }

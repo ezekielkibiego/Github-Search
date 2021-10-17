@@ -40,7 +40,8 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
+    this.getUser("ezekielkibiego")
+    this.getRepos("ezekielkibiego")
 
   }
   

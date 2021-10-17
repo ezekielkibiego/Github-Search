@@ -1,15 +1,25 @@
-<div class="container-fluid card"><br>
-    <div *ngFor= "let repo of repository"><br>
-        <div class="card">
+<div class="container card"><br>
+    <div ><br>
+        <div class="">
             <div class="b-text">
-                <h3>{{repo.name}} </h3>
-            </div><br>
-            <div>
-                {{repo.description}} 
+                <img [src]="username?.avatar_url" alt="">
             </div>
-            <!-- <div>
-                {{}} 
-            </div> -->
+            
+            <div>
+                {{username?.login}}
+            </div>
+            <div>
+                {{username?.location}}
+            </div>
+            <div>
+                {{username?.company}}
+            </div>
+            <div>
+                followers {{username?.followers}}
+                following {{username?.following}}
+            </div>
+            <div>
+            </div>
         </div>
     </div><br>
 </div>
