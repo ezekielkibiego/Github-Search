@@ -10,6 +10,7 @@ import { Repos } from '../users/repos';
 export class DataService {
   userData: User;
   repoData: Repos;
+  RepoData: Repos;
 
   constructor(private http: HttpClient){
     this.userData = new User(

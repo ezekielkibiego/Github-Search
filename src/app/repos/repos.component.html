@@ -1,7 +1,7 @@
 <div class="container">
-    <form class="mb-3 m-5 p-5">
+    <form class="mb-3 m-5 p-5" (ngSubmit)= "searchGithubRepo()" #e="ngForm">
         
-        <input type="text" class="form-control search"
+        <input type="text" class="form-control search"  name="search" ngModel #search="ngModel"
             placeholder="Enter Github Repo to search..." required >
         <p class="text-danger error-block" ></p>
         <div class=" mt-5 text-center">
