@@ -1,7 +1,7 @@
-<div class="container"><br>
-    <div ><br>
-        <div class="">
-            <div class="b-text">
+<div class="container-fluid bg"><br>
+    <div class=" row"><br>
+        <div class="col-md-4 user">
+            <div class=" b-text">
                 <img [src]="username?.avatar_url" alt="">
             </div><br>
             <div class="git">
@@ -31,10 +31,11 @@
             </div>
 
         </div>
-        <div>
-            <div>
-                <h4>{{repository.name}}</h4>
+        <div class="col-md-8 ">
+            <div class="card" *ngFor="let repository of repository; let i = index ">
+                <h4 class="text-center">{{repository.name}}</h4>
                 <p>{{repository.description}}</p>
+                <a href="{{ repository.html_url }}" target="_blank" class="text-center">View Repository</a>
             </div>
         </div>
     </div><br>
