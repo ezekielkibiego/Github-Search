@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   
-  apiKey: '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',
+  apiKey: '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',
   apiUrl: 'https://api.github.com/users'
 };
 /*
