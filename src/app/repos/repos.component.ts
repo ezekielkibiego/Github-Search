@@ -10,19 +10,19 @@ import { NgForm } from '@angular/forms';
 })
 export class ReposComponent implements OnInit {
 
-  @ViewChild('e') searchGithubRepoForm: NgForm
+  @ViewChild('e') searchGithubReposForm: NgForm
   home: string;
   userInfo: Repos;
 
   showRepos = false;
 
-  searchGithubRepo(){
-    this.home=this.searchGithubRepoForm.value.search;
+  searchGithubRepos(){
+    this.home=this.searchGithubReposForm.value.search;
     console.log(this.home);
     
-    this.requestUser.getReposDataRequest(this.home).then(
+    this.requestRepos.getReposDataRequest(this.home).then(
       (Response)=>{
-        this.userInfo=this.requestUser.repoData;
+        this.userInfo=this.requestRepos.repoData;
         console.log(this.userInfo);
       },
       (error)=>{
@@ -31,7 +31,7 @@ export class ReposComponent implements OnInit {
     );
     this.showRepos=true;
   }
-  constructor(private requestUser:DataService) {}
+  constructor(private requestRepos:DataService) {}
 
 
 

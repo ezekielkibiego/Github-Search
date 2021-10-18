@@ -11,8 +11,8 @@
 .b-text img{
     border-radius: 50%;
     height: auto;
-    width: 70%;
-    padding-bottom: 40px;
+    width: 60%;
+    padding-bottom: 4px;
 }
 .twitter a{
     text-decoration: none;
@@ -20,8 +20,7 @@
     
 }
 .git div{
-    padding: 5px;
-    
+    padding: 6px;
 }
 .bg{
     background-color: #161b22;
