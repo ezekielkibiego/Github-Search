@@ -1,24 +1,33 @@
-<div class="container card"><br>
+<div class="container"><br>
     <div ><br>
         <div class="">
             <div class="b-text">
                 <img [src]="username?.avatar_url" alt="">
-            </div>
-            
-            <div>
-                {{username?.login}}
-            </div>
-            <div>
-                {{username?.location}}
-            </div>
-            <div>
-                {{username?.company}}
-            </div>
-            <div>
-                followers {{username?.followers}}
-                following {{username?.following}}
-            </div>
-            <div>
+            </div><br>
+            <div class="git">
+                <div class="text-start">
+                    <h3>{{username?.name}}</h3>
+                </div>
+                <div>
+                    {{username?.login}}
+                </div>
+                <div>
+                    {{username?.bio}}
+                </div>
+                
+                <div>
+                    {{username?.followers}} Followers.
+                    {{username?.following}} Following.
+                </div>
+                <div>
+                    {{username?.company}}
+                </div>
+                <div>
+                    {{username?.location}}
+                </div>
+                <div class="twitter">
+                    <a href="https://twitter.com/KibiegoEzekiel">@{{username?.twitter_username}}</a>
+                </div>
             </div>
         </div>
     </div><br>

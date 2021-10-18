@@ -10,7 +10,34 @@
     </form>
 </div>
 <div class="container card"><br>
-    <div >
-        {{userInfo?.name}}  
+    <div class="">
+        <div class="b-text">
+            <img [src]="userInfo?.avatar_url" alt="">
+        </div><br>
+        <div class="git">
+            <div class="text-start">
+                <h3>{{userInfo?.name}}</h3>
+            </div>
+            <div>
+                {{userInfo?.login}}
+            </div>
+            <div>
+                {{userInfo?.bio}}
+            </div>
+            
+            <div>
+                {{userInfo?.followers}}
+                {{userInfo?.following}}
+            </div>
+            <div>
+                {{userInfo?.company}}
+            </div>
+            <div>
+                {{userInfo?.location}}
+            </div>
+            <div class="twitter">
+                <a href="https://twitter.com/KibiegoEzekiel">{{userInfo?.twitter_username}}</a>
+            </div>
+        </div>
     </div>
 </div>

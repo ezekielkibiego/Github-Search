@@ -7,3 +7,17 @@
 ::placeholder{
     color: rgb(221, 130, 96);
 }
+
+.b-text img{
+    border-radius: 50%;
+    height: auto;
+    width: 30%;
+}
+.twitter a{
+    text-decoration: none;
+    
+}
+.git div{
+    padding: 5px;
+    
+}
