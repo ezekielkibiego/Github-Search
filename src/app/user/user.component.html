@@ -1,42 +1,43 @@
-<div class="container" >
-    <form class="mb-3 m-5 p-5" (ngSubmit)= "searchGithubUser()" #k="ngForm">
-        
-        <input type="text" class="form-control search"
-            name="search" ngModel #search="ngModel" placeholder="Enter Github Username to search..." required>
-        <p class=""></p>
-        <div class=" mt-5 text-center">
-            <button type="submit" class="user"> Search User</button>
-        </div>
-    </form>
-</div>
-<div class="container card text-center"><br>
-    <div class="">
-        <div class="b-text">
-            <img [src]="userInfo?.avatar_url" alt="">
-        </div><br>
-        <div class="git">
+<div class="bg">
+    <div class="container-fluid">
+        <form class="mb-3 m-5 p-5" (ngSubmit)= "searchGithubUser()" #k="ngForm">
+            <input type="text" class="form-control search"
+                name="search" ngModel #search="ngModel" placeholder="Enter Github Username to search..." required>
+            <p class=""></p>
+            <div class=" mt-5 text-center">
+                <button type="submit" class="user"> Search User</button>
+            </div>
+        </form>
+        <div class="container text-center"><br>
             <div class="">
-                <h3>{{userInfo?.name}}</h3>
-            </div>
-            <div>
-                {{userInfo?.login}}
-            </div>
-            <div>
-                {{userInfo?.bio}}
-            </div>
-            
-            <div>
-                {{userInfo?.followers}}
-                {{userInfo?.following}}
-            </div>
-            <div>
-                {{userInfo?.company}}
-            </div>
-            <div>
-                {{userInfo?.location}}
-            </div>
-            <div class="twitter">
-                <a href="https://twitter.com/KibiegoEzekiel">{{userInfo?.twitter_username}}</a>
+                <div class="b-text">
+                    <img [src]="userInfo?.avatar_url" alt="">
+                </div><br>
+                <div class="git">
+                    <div class="">
+                        <h3>{{userInfo?.name}}</h3>
+                    </div>
+                    <div>
+                        {{userInfo?.login}}
+                    </div>
+                    <div>
+                        {{userInfo?.bio}}
+                    </div>
+                    
+                    <div>
+                        {{userInfo?.followers}}
+                        {{userInfo?.following}}
+                    </div>
+                    <div>
+                        {{userInfo?.company}}
+                    </div>
+                    <div>
+                        {{userInfo?.location}}
+                    </div>
+                    <div class="twitter">
+                        <a href="https://twitter.com/KibiegoEzekiel">{{userInfo?.twitter_username}}</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
