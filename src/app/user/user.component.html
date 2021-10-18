@@ -27,23 +27,23 @@
 
                     </div>
                     <div>
-                        {{userInfo?.public_repos}}
+                        Public Repos: {{userInfo?.public_repos}}
                     </div>
                     <div>
-                        {{userInfo?.company}}
+                        <i class="fa fa-building" aria-hidden="true"></i> {{userInfo?.company}}
                     </div>
                     <div>
-                        {{userInfo?.location}}
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> {{userInfo?.location}}
                     </div>
                     <div>
-                        Followers {{userInfo?.followers}}
-                        {{userInfo?.following}}
+                        <i class="fa fa-users" aria-hidden="true"></i>  Followers: {{userInfo?.followers}} 
+                            Following: {{userInfo?.following}}
                     </div>
                     <div>
-                        {{userInfo?.created_at | date }}
+                        <p><i class="fa fa-sign-in" aria-hidden="true"></i>  {{userInfo?.created_at | date }}
                     </div>
                     <div class="twitter">
-                        <a href="https://twitter.com/KibiegoEzekiel">{{userInfo?.twitter_username}}</a>
+                        <a href="https://twitter.com/KibiegoEzekiel"><i class="fa fa-twitter" aria-hidden="true"></i> {{userInfo?.twitter_username}}</a>
                     </div><br><br>
                 </div>
             </div>

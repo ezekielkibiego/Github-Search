@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid bg">
     <form class="mb-3 m-3" (ngSubmit)= "searchGithubRepos()" #e="ngForm">
         
         <input type="text" class="form-control search"  name="search" ngModel #search="ngModel"
@@ -13,7 +13,7 @@
             <div class="">
                 <div class="card">
                     <div>
-                        {{repos?.name}} <br>
+                        <h3>{{repos?.name}}</h3>
                     </div>
                     <div>
                         {{repos?.description}}
