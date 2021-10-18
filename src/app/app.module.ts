@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { ReposComponent } from './repos/repos.component';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReposComponent } from './repos/repos.component';
     NavbarComponent,
     HomeComponent,
     UserComponent,
-    ReposComponent
+    ReposComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
