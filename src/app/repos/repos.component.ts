@@ -12,7 +12,7 @@ export class ReposComponent implements OnInit {
 
   @ViewChild('e') searchGithubReposForm: NgForm
   home: string;
-  userInfo: Repos;
+  userInfo ;
 
   showRepos = false;
 

@@ -8,7 +8,7 @@
                 <button type="submit" class="user"> Search User</button>
             </div>
         </form>
-        <div class="container">
+        <div class="container" *ngIf="showUser">
             <div class="row">
                 <div class="col-md-6 b-text">
                     <img [src]="userInfo?.avatar_url" alt="">
@@ -36,7 +36,7 @@
                         {{userInfo?.location}}
                     </div>
                     <div>
-                        {{userInfo?.followers}}
+                        Followers {{userInfo?.followers}}
                         {{userInfo?.following}}
                     </div>
                     <div>

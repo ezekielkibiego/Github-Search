@@ -24,12 +24,14 @@ export class UserComponent implements OnInit {
       (Response)=>{
         this.userInfo=this.requestUser.userData;
         console.log(this.userInfo);
+        
+        this.showUser=true;
       },
       (error)=>{
         console.log(error);
       }
     );
-    this.showUser=true;
+    
   }
   constructor(private requestUser:DataService) {}
 

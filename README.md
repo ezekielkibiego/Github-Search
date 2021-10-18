@@ -56,7 +56,7 @@ Click "Search User or Search Repos" link on the navbar:
 <li>Click search user</li>
 <li>See the displayed user data</li>
 <li>Go to search Repos and click there</li>
-<li>Input repository name</li>
+<li>Input Gi name</li>
 <li>Click Search Repos to veiw the repository details</li>
 </ul>
 

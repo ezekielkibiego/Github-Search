@@ -77,6 +77,7 @@ export class DataService {
     this.http.get<ApiResponse>(environment.apiUrl + '/' + getUserInfo + '/repos?sort=created&direction=desc??access_token=' + environment.apiKey).toPromise().then((Response)=>{
 
      this.repoData = Response;
+     console.log(this.repoData)
      resolve()
     },
     (error)=>{
