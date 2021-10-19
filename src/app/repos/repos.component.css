@@ -19,3 +19,7 @@
     background-color: #161b22;
     color: white;
 }
+.card a{
+    text-decoration: none;
+    color: rgb(221, 130, 96);
+}
