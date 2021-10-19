@@ -20,6 +20,11 @@
     border-color: white;
     border-radius: 10px;
     padding: 1rem;
+    
+
+}
+.card:hover{
+    filter: drop-shadow(2px 2px 4px rgb(221, 130, 96));
 }
 .bg{
     background-color: #161b22;
