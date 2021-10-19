@@ -32,7 +32,7 @@
                     </div>
                     <div>
                        <p><i class="fa fa-sign-in" aria-hidden="true"></i> {{username?.created_at | date}} </p>
-                       {{username?.created_at | dateCount }} Days ago
+                       <p appStrikethrough>{{username?.created_at | dateCount }} Days ago</p>
 
                     </div>
                     <div class="twitter">
@@ -46,7 +46,7 @@
             <h3 class="text-center">Repositories</h3><br>
             <div class="row">
                 <div class="card col-md-6" *ngFor="let repository of repository; let i = index ">
-                    <h4  appStrikethrough class="text-center">{{repository.name}}</h4>
+                    <h4 class="text-center">{{repository.name}}</h4>
                     <p>{{repository.description}}</p>
                     <a href="{{ repository.html_url }}" target="_blank" class="">Repository Details</a>
                     <p>Created On: {{repository.created_at | date }}</p> 
